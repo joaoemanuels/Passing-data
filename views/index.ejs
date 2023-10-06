@@ -8,12 +8,18 @@
 </head>
 
 <body>
-  <h1>Digite seu nome abaixo</h1>
-  <form action="/submit" method="post">
-    <input type="text" name="fName" placeholder="Digite seu nome">
-    <input type="text" name="lName" placeholder="Digite seu sobrenome">
-    <input type="submit" value="OK">
-  </form>
+
+  <% if(locals.numberOfLetters) {%>
+    <h1> numero de letras é igual a: <%=numberOfLetters %></h1>
+    <%}else{%>
+      <h1>Digite seu nome abaixo</h1>
+      <%}%>
+
+        <form action="/submit" method="post">
+          <input type="text" name="fName" placeholder="Digite seu nome">
+          <input type="text" name="lName" placeholder="Digite seu sobrenome">
+          <input type="submit" value="OK">
+        </form>
 
 
 </body>

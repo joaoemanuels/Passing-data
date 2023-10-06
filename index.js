@@ -15,13 +15,13 @@ app.get("/", (req, res) => {
   res.render("index.ejs",
     {
       name: req.body["fName"],
-      sobrenome: req.body[lName]
+      sobrenome: req.body["lName"]
     });
 });
 
 app.post("/submit", (req, res) => {
-  const indexPath = join(__dirname, "index.html");
-  res.sendFile(indexPath);
+  const numLetters = req.body["fName"].length + req.body["lName"].length;
+  res.render("index.ejs", { numberOfLetters: numLetters })
 });
 
 
